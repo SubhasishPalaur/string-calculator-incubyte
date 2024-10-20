@@ -16,10 +16,22 @@ export function add(numbers: string): number {
     const numArray = numbersToAdd.split(delimiter).map((val)=>val.split('\\n')).flat();
 
     let sum = 0;
+    const negatives: string[] = [];
 
     for (const num of numArray) {
-        sum += Number(num);
+        if (num) { 
+            const number = Number(num);
+            if (number < 0) {
+                negatives.push(num); 
+            } else {
+                sum += number; 
+            }
+        }
     }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negative numbers not allowed: ${negatives.join(', ')}`);
+      }
 
     return sum;
 }
