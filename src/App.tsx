@@ -18,7 +18,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h1>String Calculator</h1>
-      <div>
+      <div style={{'display': 'flex','alignItems': 'center', 'justifyContent': 'center'}}>
       <input
         type="text"
         placeholder="Enter numbers"
