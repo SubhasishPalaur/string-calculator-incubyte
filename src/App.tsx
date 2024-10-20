@@ -18,13 +18,16 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h1>String Calculator</h1>
+      <div>
       <input
         type="text"
         placeholder="Enter numbers"
+        style={{'marginRight': '20px','height': '32px'}}
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={handleCalculate}>Calculate</button>
+      <button onClick={handleCalculate} style={{'backgroundColor':'#176e16', 'padding': '8px 12px'}}>Calculate</button>
+      </div>
       <p>Result: {result}</p>
     </div>
   );
